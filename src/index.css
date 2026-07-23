@@ -1,0 +1,83 @@
+/* ============================================
+   GEARLINE — design tokens
+   Stadium-at-night palette: deep pitch green/near-black,
+   chalk white type, cricket-seam red, floodlight gold.
+============================================ */
+:root {
+  --night: #0b1a14;
+  --night-2: #10241b;
+  --turf: #163a26;
+  --turf-line: #1f5c3f;
+  --chalk: #f3f1e7;
+  --chalk-dim: #c9d1c7;
+  --seam-red: #b3282d;
+  --seam-red-bright: #d94148;
+  --gold: #e0a526;
+  --leather: #7a4b2a;
+
+  --font-display: 'Anton', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 14px;
+  --shadow-lift: 0 20px 40px -18px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--night);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(224, 165, 38, 0.14), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(179, 40, 45, 0.12), transparent 55%);
+  color: var(--chalk);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--seam-red);
+  color: var(--chalk);
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
